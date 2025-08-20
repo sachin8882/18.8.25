@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f2f2f2;
+      }
+      .container {
+        width: 80%;
+        max-width: 900px;
+        background: #fff;
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(20, 10, 10, 0.1);
+      }
+      .left {
+        width: 50%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .left h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .left input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+      .left button {
+        width: 100%;
+        padding: 12px;
+        background: #123b66;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .left button:hover {
+        background: magenta;
+        box-shadow: #333;
+      }
+      .right {
+        width: 50%;
+        background: #007bff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .right img {
+        width: 150px;
+        border-radius: 70%;
+        margin-bottom: 10px;
+      }
+      .right h5 {
+        font-size: x-large;
+      }
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          width: 95%;
+        }
+        .left,
+        .right {
+          width: 100%;
+        }
+        .right {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+          <label for="">Email</label>
+          <input
+            type="text"
+            placeholder="enter you email"
+            class="form-control"
+            name="email"
+          />
+          <label for="">Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            class="form-control"
+            name="password"
+          />
+          <button type="submit" value="login">Login</button><br>
+          <div class="pt"><p>New user  || <a href="/user/signup">SignUp</a></p></div>
+        </form>
+      </div>
+      <div class="right">
+        <img src="views/b17d2311f823936b4b0649db9abe5983.png" alt="Logo" />
+        <h5>Gyan International Public School</h5>
+      </div>
+    </div>
+  </body>
+</html>

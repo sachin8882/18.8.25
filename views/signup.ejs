@@ -1,0 +1,37 @@
+<%- include('./base/header.ejs') %>
+<div class="container">
+  <div class="alert text-center bg-primary my-3" style="color: white">
+    <h4>Signup Form</h4>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <form action="/add/user" method="post">
+          <div class="">
+            <label for="username">FirstName</label>
+            <input type="text" placeholder="Enter your FirstName" class="form-control" name="firstName"/>
+          </div>
+          <div class="">
+            <label for="username">LastName</label>
+            <input type="text" placeholder="Enter your LastName" class="form-control" name="lastName"/>
+          </div>
+          <div class="">
+            <label for="username">Emial</label>
+            <input type="text" placeholder="Enter your Email" class="form-control" name="email"/>
+          </div>
+          <div class="password">
+            <label class="form-label">Password</label>
+            <input type="password" placeholder="Enter your password" class="form-control" name="password"/>
+          </div>
+          <div>
+            <button type="submit" value="Login" class="btn btn-warning w-100 my-3">SignUp</button>
+          </div>
+          <div><p>Already have an Account  ||   <a href="/">LoginIn</a></p></div>
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>
+<%- include('./base/footer.ejs') %>
