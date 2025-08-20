@@ -17,7 +17,4 @@ router.post("/login", (req, res) => {
 router.get("/student/add/page",(req,res)=>{
     res.render('addstudent')
 })
-router.post("/add/student",(req,res)=>{
-    studentController.
-})
 module.exports = router;
