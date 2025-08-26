@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col"></div>
       <div class="col">
-        <form action="/add/student" method="post">
+        <form action="/add/student" method="post" enctype="multipart/form-data">
           <div class="">
             <label class="form-label">RollNo</label>
             <input type="text" placeholder="Enter your rollNo" class="form-control" name="rollNo"/>
@@ -22,15 +22,39 @@
           </div>
           <div>
             <label class="form-label">Course</label>
-            <input type="text" placeholder="Enter your course" class="form-control" name="course"/>
+            <input type="text" placeholder="Select your course" class="form-control" name="course">
+            <!-- <select class="form-control" name="course">
+              <option value="">--Choose course--</option>
+              <option value="">B-TECH</option>
+              <option value="">M-TECH</option>
+              <option value="">Bca</option>
+              <option value="">MCA</option>
+              <option value="">BCOM</option>
+              <option value="">BBA</option>
+              <option value="">MBA</option>
+            </select> -->
           </div>
           <div>
             <label class="form-label">Branch</label>
             <input type="text" placeholder="Enter your Branch" class="form-control" name="branch"/>
+            <!-- <select class="form-control" name="branch">
+              <option value="">--Choose branch--</option>
+              <option value="">CSE</option>
+              <option value="">AI-ML</option>
+              <option value="">DATA SCIENCE</option>
+              <option value="">IOT</option>
+              <option value="">MECHINICAL</option>
+              <option value="">CIVIL</option>
+              <option value="">ELECTRICAL</option>
+            </select> -->
           </div>
           <div>
             <label class="form-label">yearOfAddmission</label>
             <input type="text" placeholder="Enter your yearOfAddmission" class="form-control" name="yearOfAddmission"/>
+          </div>
+          <div>
+            <label class="form-label">Select Student Image</label>
+             <input type="file" placeholder="Enter your image" class="form-control" name="studentImage"/> <!--jab bhi hum file bhejte ha to vo req.file mai jata ha or data req.bpdy mai jata ha -->
           </div>
           <div>
             <button type="submit" value="Login" class="btn btn-warning w-100 my-3">Add Student</button>

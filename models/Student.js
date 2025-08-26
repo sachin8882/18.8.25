@@ -8,6 +8,7 @@ let studentSchema = Schema({
     course: { type: String, required: true},
     branch: { type: String, required: true},
     yearOfAddmission: { type: String, },
+    studentImage: { type: String},
     createdAt: Date,
     updatedAt: Date,
 });

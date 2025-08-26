@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Student = require('../models/Student');
 const bcrypt = require('bcrypt');
 async function addUser(req,res) {
     try{
@@ -23,7 +24,10 @@ async function doLogin(req,res) {
         if(user){
             let validPassword = bcrypt.compare(req.body.password, user.password);
             if(validPassword){
-                res.render('welcomadmin.ejs');
+                let students = await Student.find({});
+                res.render('welcomadmin.ejs', {
+                    students: students
+                });
             }else{
                 res.send("<h1> invalid email/password...")
             }
