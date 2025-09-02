@@ -4,8 +4,22 @@ async function addStudent(req,res) {
     try{
         console.log(req.body, 'req.body');
         console.log(req.file, 'req.file');
+        let result;
+        if(req.file){
+            cloudinary.config({
+                cloud_name:'dpbduayqz',
+                api_key:'688242535712242',
+                api_secret:'4gnTYqAW9N-ThdQ-hL37cK4WAf8'
+            })
+            result = await cloudinary.uploader.upload(req.file.path);
+            console.log(result);
+        }
         let student =await new Student(req.body);
+        if(req.file){
+            student.studentImage = result.secure_url;
+        }
         await student.save();
+        console.log(" data base updated .....")
         let students = await Student.find({});
         res.render('studentlist',{
             students:students

@@ -5,7 +5,6 @@ async function addUser(req,res) {
     try{
         console.log(req.body, 'req.body');
         let user = new User(req.body);
-        user.userType = 'Admin';
         let encryptedPassword = bcrypt.hashSync(req.body.password, 10);
         console.log(encryptedPassword);
         user.password = encryptedPassword; 

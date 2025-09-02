@@ -6,7 +6,7 @@ let userSchema = Schema({
     lastName: { type:String, },
     email: {type: String, required:true},
     password: { type: String, required: true},
-    userType: { type: String, default: 'user'},
+    userType: { type: String, default: 'student'},
     createdAt: Date,
     updatedAt: Date,
 });
