@@ -6,20 +6,20 @@ async function addUser(req,res) {
         console.log(req.body, 'req.body');
         let user = new User(req.body);
         let encryptedPassword = bcrypt.hashSync(req.body.password, 10);
-        console.log(encryptedPassword);
+        // console.log(encryptedPassword);
         user.password = encryptedPassword; 
         await user.save();
-        console.log("data saved successfully....");
+        // console.log("data saved successfully....");
         res.redirect("/");
     }catch(err){
-        console.log(err);
+        // console.log(err);
     }
 }
 async function doLogin(req,res) {
     try{
-        console.log(req.body, 'req.body');
+        // console.log(req.body, 'req.body');
         let user =await User.findOne({ email: req.body.email });
-        console.log(user);
+        // console.log(user);
         if(user){
             let validPassword = bcrypt.compare(req.body.password, user.password);
             if(validPassword){
@@ -34,7 +34,7 @@ async function doLogin(req,res) {
             res.send("<h1> user does not exist");
         }
     }catch(err){
-        console.log(err);
+        // console.log(err);
     }
 }
 module.exports = {

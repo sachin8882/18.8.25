@@ -2,8 +2,8 @@ const Student = require('../models/Student');
 const cloudinary = require('cloudinary').v2;
 async function addStudent(req,res) {
     try{
-        console.log(req.body, 'req.body');
-        console.log(req.file, 'req.file');
+        // console.log(req.body, 'req.body');
+        // console.log(req.file, 'req.file');
         let result;
         if(req.file){
             cloudinary.config({
@@ -12,20 +12,20 @@ async function addStudent(req,res) {
                 api_secret:'4gnTYqAW9N-ThdQ-hL37cK4WAf8'
             })
             result = await cloudinary.uploader.upload(req.file.path);
-            console.log(result);
+            // console.log(result);
         }
         let student =await new Student(req.body);
         if(req.file){
             student.studentImage = result.secure_url;
         }
         await student.save();
-        console.log(" data base updated .....")
+        // console.log(" data base updated .....")
         let students = await Student.find({});
         res.render('studentlist',{
             students:students
         });
     }catch(err){
-        console.log(err);
+        // console.log(err);
     }
 }
 async function deleteStudent(req, res) {
@@ -37,7 +37,7 @@ async function deleteStudent(req, res) {
             students: students
         })
     }catch(err){
-        console.log(err);
+        // console.log(err);
     }
 }
 async function openEditPage(req,res){
@@ -52,7 +52,7 @@ async function openEditPage(req,res){
             res.render('loginpanel');
         }
     }catch(err){
-        console.log(err);
+        // console.log(err);
     }
 }
 // /edit/student/:_id
@@ -62,7 +62,7 @@ async function editStudent(req,res) {
         console.log(studentId + "studentId");
         let student = await Student.findOne({ _id: studentId });
         if(student){
-            console.log(req.body, "req.body");
+            // console.log(req.body, "req.body");
             student.rollNo = req.body.rollNo;
             student.studentName = req.body.studentName;
             student.fatherName = req.body.fatherName;
