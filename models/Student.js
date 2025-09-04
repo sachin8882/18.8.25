@@ -5,6 +5,7 @@ let studentSchema = Schema({
     rollNo: { type: Number, required: true },
     studentName: { type:String, },
     fatherName: {type: String, required:true},
+    motherName: {type: String, required:true},
     course: { type: String, required: true},
     branch: { type: String, required: true},
     yearOfAddmission: { type: String, },

@@ -4,7 +4,7 @@ async function makeAdmin() {
     try{
         let user = await User.findOne({ email: 'sachin123@gmail.com' });
         if(user){
-            // console.log("user updated");
+            console.log("user updated");
         }else{
             user = new User();
             user.firstName = 'Sachin';
@@ -14,7 +14,7 @@ async function makeAdmin() {
             user.password = encryptedPassword;
             user.userType = 'Admin';
             await user.save();
-            // console.log('user saved successfully.... ');
+            console.log('user saved successfully.... ');
         }
     }catch(err){
         // console.log(err)
